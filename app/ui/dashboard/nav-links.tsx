@@ -5,7 +5,7 @@ import {
   HomeIcon,
 } from '@heroicons/react/24/outline';
 import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip"
-import { BotIcon, LayoutGridIcon } from "@/app/ui/icons/icons"
+import { LightbulbIcon, DollarSignIcon, BarChart2Icon, FileTextIcon, BriefcaseIcon } from "@/app/ui/icons/icons"
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 
@@ -14,11 +14,35 @@ import clsx from 'clsx';
 const navigation = [
   { name: 'Home', href: '/dashboard', icon: HomeIcon },
   {
-    name: 'Projects',
-    href: '/dashboard/projects',
-    icon: LayoutGridIcon,
+    name: 'Generación de ideas y planificación estratégica',
+    href: '/dashboard/ideas-y-estrategia',
+    icon: LightbulbIcon,
   },
-  { name: 'Customers', href: '/dashboard/customers', icon: UserGroupIcon },
+  {
+    name: 'Departamento Financiero',
+    href: '/dashboard/financiero',
+    icon: DollarSignIcon,
+  },
+  {
+    name: 'Departamento Marketing',
+    href: '/dashboard/marketing',
+    icon: BarChart2Icon,
+  },
+  {
+    name: 'Departamento de Recursos Humanos',
+    href: '/dashboard/recursos-humanos',
+    icon: UserGroupIcon,
+  },
+  {
+    name: 'Departamento legal',
+    href: '/dashboard/legal',
+    icon: FileTextIcon,
+  },
+  {
+    name: 'Departamento de operaciones',
+    href: '/dashboard/operaciones',
+    icon: BriefcaseIcon,
+  },
 ]
 
 export default function NavLinks() {

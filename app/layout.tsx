@@ -1,5 +1,6 @@
 import '@/app/ui/global.css';
-import { lusitana } from '@/app/ui/fonts';
+import { interFontHeading, interFontBody } from '@/app/ui/fonts';
+import { cn } from '@/lib/utils';
 
 export default function RootLayout({
   children,
@@ -8,7 +9,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${lusitana.className} antialiased`}>{children}</body>
+      <body className={cn(
+        'antialiased',
+        interFontHeading.variable,
+        interFontBody.variable
+      )}>{children}</body>
     </html>
   );
 }

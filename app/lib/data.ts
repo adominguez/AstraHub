@@ -6,6 +6,7 @@ import {
   InvoicesTable,
   LatestInvoiceRaw,
   Revenue,
+  Company,
 } from './definitions';
 import { formatCurrency } from './utils';
 
@@ -14,12 +15,12 @@ export async function fetchRevenue() {
     // Artificially delay a response for demo purposes.
     // Don't do this in production :)
 
-    // console.log('Fetching revenue data...');
-    // await new Promise((resolve) => setTimeout(resolve, 3000));
+    console.log('Fetching revenue data...');
+    await new Promise((resolve) => setTimeout(resolve, 3000));
 
     const data = await sql<Revenue>`SELECT * FROM revenue`;
 
-    // console.log('Data fetch completed after 3 seconds.');
+    console.log('Data fetch completed after 3 seconds.');
 
     return data.rows;
   } catch (error) {
@@ -36,6 +37,8 @@ export async function fetchLatestInvoices() {
       JOIN customers ON invoices.customer_id = customers.id
       ORDER BY invoices.date DESC
       LIMIT 5`;
+    
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     const latestInvoices = data.rows.map((invoice) => ({
       ...invoice,
@@ -65,6 +68,8 @@ export async function fetchCardData() {
       customerCountPromise,
       invoiceStatusPromise,
     ]);
+
+    await new Promise((resolve) => setTimeout(resolve, 2500));
 
     const numberOfInvoices = Number(data[0].rows[0].count ?? '0');
     const numberOfCustomers = Number(data[1].rows[0].count ?? '0');
@@ -215,3 +220,34 @@ export async function fetchFilteredCustomers(query: string) {
     throw new Error('Failed to fetch customer table.');
   }
 }
+
+export async function fetchCompaniesUserCount(id: string) {
+  try {
+    const data = await sql<Company>`SELECT COUNT(*) FROM invoices WHERE customer_id = ${id}`;
+    return parseInt(data.rows[0].count);
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch invoice.');
+  }
+}
+
+export async function fetchBusinessTypes() {
+  try {
+    const data = await sql`SELECT * FROM business_types`;
+    return data.rows;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch business types.');
+  }
+}
+
+export async function fetchIndustries() {
+  try {
+    const data = await sql`SELECT * FROM industries`;
+    return data.rows;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch industries.');
+  }
+}
+

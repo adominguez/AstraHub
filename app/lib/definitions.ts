@@ -86,3 +86,59 @@ export type InvoiceForm = {
   amount: number;
   status: 'pending' | 'paid';
 };
+
+export type BusinessType = {
+  id: string;
+  name: string;
+  description: string;
+};
+
+export type Industry = {
+  id: string;
+  name: string;
+  description: string;
+};
+
+export type Service = {
+  company_id: string;
+  id: string;
+  name: string;
+  description: string;
+  category: string;
+  price: number;
+  created_at: string;
+  updated_at: string;
+};
+
+export type StatusGoals = {
+  id: string;
+  name: string;
+  description: string;
+}
+
+export type Goal = {
+  company_id: string;
+  id: string;
+  name: string;
+  description: string;
+  progress: number;
+  status: string;
+}
+
+export type Company = {
+  id: string;
+  user_id: string;
+  name: string;
+  description: string;
+  logo_url: string;
+  founded_date: string;
+  business: string;
+  industry: string;
+  city: string;
+  website: string;
+  country: string;
+  employees: number;
+  revenue: number;
+  created_at: string;
+  updated_at: string;
+};

@@ -1,3 +1,6 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
+
 // Loading animation
 const shimmer =
   'before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent';
@@ -83,22 +86,25 @@ export function LatestInvoicesSkeleton() {
 }
 
 export default function DashboardSkeleton() {
+  debugger
   return (
-    <>
-      <div
-        className={`${shimmer} relative mb-4 h-8 w-36 overflow-hidden rounded-md bg-gray-100`}
-      />
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <CardSkeleton />
-        <CardSkeleton />
-        <CardSkeleton />
-        <CardSkeleton />
+    <div className="flex relative flex-col sm:gap-4 w-full">
+      <header className="sticky z-30 h-14 items-center gap-4 border-b bg-background top-0 px-4 py-2 sm:h-auto sm:px-6">
+        <div className="flex gap-2">
+          <Skeleton className="h-4 w-1/2 mb-2" />
+        </div>
+      </header>
+      <main className="flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
+        <div dir="ltr" data-orientation="horizontal">
+        <Skeleton className="h-9 w-1/2 mb-2" />
+        <Card>
+          <CardContent className="flex flex-col sm:flex-row gap-4 flex-wrap">
+            <Skeleton className="h-4 w-1/2 mb-2" />
+          </CardContent>
+        </Card>
       </div>
-      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
-        <RevenueChartSkeleton />
-        <LatestInvoicesSkeleton />
-      </div>
-    </>
+    </main>
+  </div>
   );
 }
 
