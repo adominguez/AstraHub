@@ -87,7 +87,7 @@ export default function DemoForm() {
           <h2 className={`text-xl md:text-2xl lg:text-3xl text-balance tracking-wide font-bold text-web-secondary pb-4 ${sourceSans.className}`}>¿En qué puede ayudarte Astra?</h2>
           <p>Astra puede ayudarte a identificar nuevas oportunidades de negocio, optimizar tus procesos empresariales y desarrollar estrategias de marketing personalizadas. Con herramientas basadas en inteligencia artificial, Astra te guía para tomar decisiones informadas y maximizar el crecimiento de tu empresa. ¡Comienza a impulsar tu éxito hoy mismo!</p>
           <p>Selecciona una de las siguientes tareas que puede hacer Astra para tí para hacer crecer tu negocio.</p>
-          <ul className="grid md:grid-cols-3 md:gap-2 gap-8 mt-4">
+          <ul className="grid md:grid-cols-2 md:gap-2 gap-8 mt-4">
             {
               services.map(({ title, key, description, icon: Icon }) => <li key={key} className='flex flex-col justify-center items-center md:border-r last:border-none px-2 py-1 gap-2'>
                 <Icon />

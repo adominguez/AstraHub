@@ -221,16 +221,6 @@ export async function fetchFilteredCustomers(query: string) {
   }
 }
 
-export async function fetchCompaniesUserCount(id: string) {
-  try {
-    const data = await sql<Company>`SELECT COUNT(*) FROM invoices WHERE customer_id = ${id}`;
-    return parseInt(data.rows[0].count);
-  } catch (error) {
-    console.error('Database Error:', error);
-    throw new Error('Failed to fetch invoice.');
-  }
-}
-
 export async function fetchBusinessTypes() {
   try {
     const data = await sql`SELECT * FROM business_types`;
