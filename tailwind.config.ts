@@ -52,6 +52,16 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        hero: {
+          DEFAULT: "hsl(var(--hero))",
+          foreground: "hsl(var(--hero-foreground))",
+        },
+        "web-primary": {
+          DEFAULT: "hsl(var(--web-primary))",
+        },
+        "web-secondary": {
+          DEFAULT: "hsl(var(--web-secondary))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -5,7 +5,7 @@ import {
   HomeIcon,
 } from '@heroicons/react/24/outline';
 import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip"
-import { LightbulbIcon, DollarSignIcon, BarChart2Icon, FileTextIcon, BriefcaseIcon } from "@/app/ui/icons/icons"
+import { LightbulbIcon, DollarSignIcon, BarChart2Icon, FileTextIcon, BriefcaseIcon } from "@/app/ui/icons"
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 

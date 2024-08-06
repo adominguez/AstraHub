@@ -1,7 +1,7 @@
 import bcrypt from 'bcrypt';
 import { db } from '@vercel/postgres';
-import { type BusinessType, type Industry, type StatusGoals } from '../lib/definitions';
-import { invoices, customers, revenue, users, businessTypes, industries, statusGoals } from '../lib/placeholder-data';
+import { type BusinessType, type Industry, type StatusGoals, type CompanyAge, type Revenues } from '../lib/definitions';
+import { invoices, customers, revenue, users, businessTypes, companyAges, industries, statusGoals, employeesTypes, revenues } from '../lib/placeholder-data';
 
 const client = await db.connect();
 
@@ -81,6 +81,72 @@ async function seedIndustries() {
   );
 
   return insertedIndustries;
+}
+
+async function seedEmployeesTypes() {
+  await client.sql`
+    CREATE TABLE IF NOT EXISTS employees (
+      id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+      name VARCHAR(255) NOT NULL,
+      description TEXT NOT NULL
+    );
+  `;
+
+  const insertedEmployeesTypes = await Promise.all(
+    employeesTypes.map(
+      (employee) => client.sql`
+        INSERT INTO employees (name, description)
+        VALUES (${employee.name}, ${employee.description})
+        ON CONFLICT (id) DO NOTHING;
+      `,
+    ),
+  );
+
+  return insertedEmployeesTypes;
+}
+
+async function seedCompanyAges() {
+  await client.sql`
+    CREATE TABLE IF NOT EXISTS company_ages (
+      id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+      name VARCHAR(255) NOT NULL,
+      description TEXT NOT NULL
+    );
+  `;
+
+  const insertedCompanyAges = await Promise.all(
+    companyAges.map(
+      (companyAge) => client.sql`
+        INSERT INTO company_ages (name, description)
+        VALUES (${companyAge.name}, ${companyAge.description})
+        ON CONFLICT (id) DO NOTHING;
+      `,
+    ),
+  );
+
+  return insertedCompanyAges;
+}
+
+async function seedRevenues() {
+  await client.sql`
+    CREATE TABLE IF NOT EXISTS revenues (
+      id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+      name VARCHAR(255) NOT NULL,
+      description TEXT NOT NULL
+    );
+  `;
+
+  const insertedRevenues = await Promise.all(
+    revenues.map(
+      (revenue) => client.sql`
+        INSERT INTO revenues (name, description)
+        VALUES (${revenue.name}, ${revenue.description})
+        ON CONFLICT (id) DO NOTHING;
+      `,
+    ),
+  );
+
+  return insertedRevenues;
 }
 
 async function seedStatusGoals() {
@@ -243,7 +309,10 @@ export async function GET() {
     // await seedBusinessTypes();
     // await seedIndustries();
     // await seedStatusGoals();
-    await seedCompanies();
+    // await seedCompanies();
+    // await seedEmployeesTypes();
+    await seedCompanyAges();
+    // await seedRevenues();
     // await seedServices();
     // await seedGoals();
     // await seedCustomers();

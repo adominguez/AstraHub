@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip"
-import { BotIcon, CircleHelpIcon } from "@/app/ui/icons/icons"
+import { BotIcon, CircleHelpIcon } from "@/app/ui/icons"
 import NavLinks from '@/app/ui/dashboard/nav-links';
 
 export default function SideNav() {

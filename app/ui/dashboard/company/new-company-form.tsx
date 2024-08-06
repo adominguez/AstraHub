@@ -8,7 +8,7 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
 import { Slider } from "@/components/ui/slider"
-import { MoveVerticalIcon } from "@/app/ui/icons/icons"
+import { MoveVerticalIcon } from "@/app/ui/icons"
 import FirstStep from '@/app/ui/dashboard/company/first-step'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Suspense } from "react"

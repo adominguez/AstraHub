@@ -1,20 +1,12 @@
-import { Inter, Lusitana } from 'next/font/google';
- 
-export const inter = Inter({ subsets: ['latin'] });
+import { Source_Sans_3 as SourceSans, Archivo_Narrow as Narrow } from 'next/font/google';
 
-export const interFontHeading = Inter({
+export const sourceSans = SourceSans({
+  weight: ['200', '700'],
   subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-heading',
-})
+});
 
-export const interFontBody = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-body',
-})
-
-export const lusitana = Lusitana({
+export const archivoNarrow = Narrow({
   weight: ['400', '700'],
   subsets: ['latin'],
+  display: 'swap',
 });

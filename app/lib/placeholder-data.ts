@@ -12,6 +12,103 @@ const users = [
   },
 ];
 
+const employeesTypes = [
+  {
+    id: "410544b2-4001-4271-9855-fec4b6a6423a",
+    name: "un autónomo",
+    description: "Autónomo"
+  }, {
+    id: "41054fe2-4001-4271-9855-fec4b6a6442a",
+    name: "2-10 empleados",
+    description: "empresa familiar"
+  }, {
+    id: "410544b2-4001-4271-9855-fec4b6a644ed",
+    name: "11 - 50 empleados",
+    description: "Pequeña empresa"
+  },
+  {
+    id: "410544b2-4001-4271-9855-fec4b6a6990e",
+    name: "51-200 empleados",
+    description: "Mediana empresa"
+  },
+  {
+    id: "410544b2-4001-4271-9855-fec34ea6442a",
+    name: "201-2000 empleados",
+    description: "Gran empresa"
+  },
+  {
+    id: "410544b2-4001-4271-9855-fec4b3e4c42a",
+    name: "+2000 empleados",
+    description: "Multinacional"
+  },
+]
+
+const companyAges = [
+  {
+    id: "410544b2-4001-4271-9855-eac4b6a6442a",
+    name: "0-1 años",
+    description: "Recien creada"
+  },
+  {
+    id: "410544b2-4001-7564-9855-fec4b6a6442a",
+    name: "1-5 años",
+    description: "Emergente"
+  },
+  {
+    id: "410544b2-897e-4271-9855-fec4b6a6442a",
+    name: "6-10 años",
+    description: "Establecida"
+  },
+  {
+    id: "410544b2-4001-4271-9855-fec4ee78442a",
+    name: "11-20 años",
+    description: "Consolidada"
+  },
+  {
+    id: "410544b2-4001-4271-9855-fec4b6aedc73",
+    name: "21-50 años",
+    description: "Madura"
+  },
+  {
+    id: "410544b2-4001-4271-9855-fec4b5e7c4a1",
+    name: "+50 años",
+    description: "Veterana"
+  }
+]
+
+const revenues = [
+  {
+    id: "410544b2-4001-0098-9855-fec4b6a6442a",
+    name: "0-100K euros",
+    description: "Ingresos bajos"
+  },
+  {
+    id: "890044b2-4001-4271-9855-fec4b6a6442a",
+    name: "100K-500K euros",
+    description: "Ingresos medios"
+  },
+  {
+    id: "410544b2-4001-4271-9855-fec4b6a0087a",
+    name: "500K-1M euros",
+    description: "Ingresos altos"
+  },
+  {
+    id: "410544b2-3022-4271-9855-fec4b6a6442a",
+    name: "1M-5M euros",
+    description: "Ingresos muy altos"
+  },
+  {
+    id: "41052902-4001-4271-9855-fec4b6a62caa",
+    name: "5M-10M euros",
+    description: "Ingresos millonarios"
+  },
+  {
+    id: "410544b2-4001-8002-9855-fec4b6a6442a",
+    name: "+10M euros",
+    description: "Ingresos multimillonarios"
+  }
+]
+
 
 const businessTypes = [
   {
@@ -111,6 +208,11 @@ const industries = [
     id: "9f10d3b1-5c31-4e2b-81d5-3d3e50f1e4b6",
     name: "Construcción",
     description: "Negocios involucrados en la construcción de edificios e infraestructura."
+  },
+  {
+    id: "1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5ob6",
+    name: "Deporte",
+    description: "Negocios relacionados con el deporte y la actividad física."
   },
   {
     id: "8a12b4c4-5d1a-4e56-91f3-4e4e3d3d3e5b",
@@ -440,4 +542,4 @@ const revenue = [
   { month: 'Dec', revenue: 4800 },
 ];
 
-export { users, customers, invoices, revenue, businessTypes, industries, companies, services, statusGoals, goals };
+export { users, customers, invoices, revenue, businessTypes, revenues, industries, employeesTypes, companyAges, companies, services, statusGoals, goals };

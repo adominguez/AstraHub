@@ -26,11 +26,6 @@ export type Invoice = {
   status: 'pending' | 'paid';
 };
 
-export type Revenue = {
-  month: string;
-  revenue: number;
-};
-
 export type LatestInvoice = {
   id: string;
   name: string;
@@ -87,51 +82,38 @@ export type InvoiceForm = {
   status: 'pending' | 'paid';
 };
 
-export type BusinessType = {
+// Tipo base para entidades con ID, nombre y descripción
+type BaseEntity = {
   id: string;
   name: string;
   description: string;
 };
 
-export type Industry = {
-  id: string;
-  name: string;
-  description: string;
-};
+// Extensiones específicas para diferentes tipos de entidades
+export type BusinessType = BaseEntity;
+export type Industry = BaseEntity;
+export type Employee = BaseEntity;
+export type CompanyAge = BaseEntity;
+export type StatusGoals = BaseEntity;
+export type Revenue = BaseEntity;
 
-export type Service = {
+export type Service = BaseEntity & {
   company_id: string;
-  id: string;
-  name: string;
-  description: string;
   category: string;
   price: number;
   created_at: string;
   updated_at: string;
 };
 
-export type StatusGoals = {
-  id: string;
-  name: string;
-  description: string;
-}
-
-export type Goal = {
+export type Goal = BaseEntity & {
   company_id: string;
-  id: string;
-  name: string;
-  description: string;
   progress: number;
   status: string;
-}
+};
 
-export type Company = {
-  id: string;
-  user_id: string;
-  name: string;
-  description: string;
+export type Company = BaseEntity & {
   logo_url: string;
-  founded_date: string;
+  age: string;
   business: string;
   industry: string;
   city: string;

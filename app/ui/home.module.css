@@ -5,3 +5,7 @@
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
 }
+
+.hero-text {
+  text-shadow: 0 0 10px rgba(197,225,255,.5)
+}

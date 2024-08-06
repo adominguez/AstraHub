@@ -1,5 +1,5 @@
 import '@/app/ui/global.css';
-import { interFontHeading, interFontBody } from '@/app/ui/fonts';
+import { archivoNarrow } from '@/app/ui/fonts';
 import { cn } from '@/lib/utils';
 
 export default function RootLayout({
@@ -8,11 +8,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className='scroll-smooth focus:scroll-auto'>
       <body className={cn(
         'antialiased',
-        interFontHeading.variable,
-        interFontBody.variable
+        archivoNarrow.className,
       )}>{children}</body>
     </html>
   );

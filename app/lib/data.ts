@@ -251,3 +251,32 @@ export async function fetchIndustries() {
   }
 }
 
+export async function fetchEmployees() {
+  try {
+    const data = await sql`SELECT * FROM employees`;
+    return data.rows;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch industries.');
+  }
+}
+
+export async function fetchCompanyAges() {
+  try {
+    const data = await sql`SELECT * FROM company_ages`;
+    return data.rows;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch company ages.');
+  }
+}
+
+export async function fetchRevenues() {
+  try {
+    const data = await sql`SELECT * FROM revenues`;
+    return data.rows;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch revenues.');
+  }
+}
