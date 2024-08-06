@@ -13,7 +13,7 @@ const ACTIONS = {
   LOADING: 'loading',
 }
 
-export default function AstraCharacter({className, action}: {className: string, action: string}) {
+export default function AstraCharacter({className, action}: {className: string, action?: string}) {
   return (
     <Image
       src="/astra-character/astra-lightbulb.webp"
